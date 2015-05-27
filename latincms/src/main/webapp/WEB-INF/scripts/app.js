@@ -15,7 +15,7 @@ latinCMS.config(['$routeProvider', function ($routeProvider) {
     });
     $routeProvider.when('/admin/abm/post', {
     	templateUrl: 'admin/abm/post/layout',
-    	controller: ABMPostController
+    	controller: ListPostController
     });
     $routeProvider.when('/admin/abm/post/nuevo', {
     	templateUrl: 'admin/abm/post/nuevo',

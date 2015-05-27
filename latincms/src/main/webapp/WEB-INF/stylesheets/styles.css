@@ -101,7 +101,9 @@ p {
 	background-color: #191918;
 	font-size: 13px;
 	width: 250px;
-	margin-top: -15px;
+	margin-top: -20px;
+	float: left;
+	height: 100%;
 }
 
 .sidebar-menu ul{
@@ -142,4 +144,14 @@ p {
 .sidebar-menu-container{
 	opacity: 1;
 	background-color: #191918;
+}
+
+.main-page{
+	float: left;
+	height: 100%;
+	width: 80%;
+}
+
+html, body{
+	height: 100%;
 }

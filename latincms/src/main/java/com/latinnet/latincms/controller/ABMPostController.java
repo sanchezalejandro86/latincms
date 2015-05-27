@@ -18,7 +18,12 @@ public class ABMPostController{
     
     @RequestMapping("/layout")
     public String getHomePage(){
-	return "abmPost/index";
+    	return "abmPost/index";
+    }
+    
+    @RequestMapping("/nuevo")
+    public String getNuevoPage(){
+    	return "abmPost/nuevo";
     }
     
 }

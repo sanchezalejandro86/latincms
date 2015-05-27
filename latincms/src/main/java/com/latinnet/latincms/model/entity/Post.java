@@ -27,6 +27,7 @@ public class Post implements BusinessObject{
     private String contenido;
     private Date fecha;
     private Usuario usuario;
+    private TipoPost tipoPost;
     private Set<Comentario> comentarios = new HashSet<Comentario>();
     
     public Post(){
@@ -77,13 +78,22 @@ public class Post implements BusinessObject{
     public Usuario getUsuario(){
         return usuario;
     }
-
     
     public void setUsuario(Usuario usuario){
         this.usuario = usuario;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "post")
+    @ManyToOne()
+    @JoinColumn(name = "tipo_post_id", nullable = false)
+    public TipoPost getTipoPost() {
+		return tipoPost;
+	}
+
+	public void setTipoPost(TipoPost tipoPost) {
+		this.tipoPost = tipoPost;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "post")
     public Set<Comentario> getComentarios(){
         return comentarios;
     }

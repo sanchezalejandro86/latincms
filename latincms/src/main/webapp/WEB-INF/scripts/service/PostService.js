@@ -12,7 +12,11 @@ function PostService($http){
 	}
 	
 	service.publicar = function(comentario){
-		return $http.post("post/")
+		return $http.post("post/");
+	}
+	
+	service.add = function(post){
+		return $http.post("post/add/", post);
 	}
 	
 	return service;

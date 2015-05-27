@@ -14,6 +14,7 @@ public class PostDTO{
     private Date fecha;
     @JsonManagedReference
     private Set<ComentarioDTO> comentarios = new HashSet<ComentarioDTO>();
+    private TipoPostDTO tipoPost; 
     private UsuarioDTO usuario; 
     
     public PostDTO(){
@@ -59,7 +60,15 @@ public class PostDTO{
         this.comentarios = comentarios;
     }
 
-    public UsuarioDTO getUsuario(){
+    public TipoPostDTO getTipoPost() {
+		return tipoPost;
+	}
+
+	public void setTipoPost(TipoPostDTO tipoPost) {
+		this.tipoPost = tipoPost;
+	}
+
+	public UsuarioDTO getUsuario(){
         return usuario;
     }
     
