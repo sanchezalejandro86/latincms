@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="post">
+		<h1>{% verbatim %}{{post.titulo}}{% endverbatim %}</h1>
+		<p class="lead">{% verbatim %}{{post.usuario.nombre}}{% endverbatim %}</p>
+		<hr >
+		<p>
+			<span class="glyphicon glyphicon-time">
+				Publicado el {% verbatim %}{{post.fecha}}{% endverbatim %}
+			</span>
+		</p>
+		<hr >
+		<p ng-bind-html="renderHtml(post.contenido)"></p>
+		<div class="well">
+        	<h4>Coment&aacute;:</h4>
+	        	<form role="form" ng-submit="publicar()">
+	            	<div class="form-group">
+	                	<textarea class="form-control" rows="3" placeholder="Introduce un comentario" ng-model="textoComentario"></textarea>
+	                </div>
+	               	<button type="submit" class="btn btn-primary">Publicar</button>
+	            </form>
+		</div>
+	</div>
+	<hr >
+	<h3>{% verbatim %}{{post.comentarios.length}} comentarios{% endverbatim %}</h3>
+	<hr >
+	<div class="row comentarios-container">
+		<ul>
+			<li ng-repeat="comentario in post.comentarios">
+			 	<div class="clearfix comentario">
+				 	<div class="col-xs-3 col-sm-2 col-lg-1 col-lg-offset-1 image">
+			 			<img src="resources/images/usuario.png" class="img-responsive"/>
+					</div>
+			 		<div class="col-xs-9 col-sm-10">
+			        	<h3 class="media-heading">{% verbatim %}{{comentario.usuario.nombre}}{% endverbatim %}
+			        		<small>{% verbatim %}{{comentario.fecha}}{% endverbatim %}</small>
+			        	</h3>
+						<p>{% verbatim %}{{comentario.contenido}}{% endverbatim %}</p>
+			        </div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<hr >
+</div>

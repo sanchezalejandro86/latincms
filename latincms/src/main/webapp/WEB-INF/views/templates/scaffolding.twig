@@ -1,0 +1,14 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+	{% include 'header.twig' %}
+	<div ng-view>
+	{% block content %}
+	{% endblock %}
+	</div>
+	{% include 'footer.twig' %}
+{% endblock %}
+
+{% block additionalStylesheets %}
+	<link href="resources/stylesheets/styles.css" rel="stylesheet" media="screen">
+{% endblock %}

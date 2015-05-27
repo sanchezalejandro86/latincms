@@ -1,0 +1,145 @@
+p {
+  line-height: 24px;
+}
+
+.post{
+    text-align: justify;
+    /*background-color: #FFFED0;*/
+    width: 100%;
+    padding: 20px;
+    margin: 5px;
+}
+
+.comentario{
+    text-align: justify;
+}
+
+.comentario .image img{
+	border-radius: 50%;
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.comentario p{
+	margin: 10px 0;
+}
+
+.comentarios-container ul{
+	padding: 0px;
+}
+
+.comentarios-container ul li{
+	margin: 30px 0;
+  	list-style-type: none;
+}
+
+.comment-block{
+	margin-left: 48px;
+	margin-top: -15px;
+}
+
+
+#hero {
+  /*background-color: #80B959;*/
+  padding: 55px 0;
+  min-height: 200px;
+  padding-bottom: 1em;
+  position: relative;
+}
+
+.light-typo {
+  color: #fff;
+}
+
+#hero #cover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  -webkit-animation-delay: 0.15s;
+  -moz-animation-delay: 0.15s;
+  -o-animation-delay: 0.15s;
+  -ms-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+  transform: translateZ(0);
+  margin-top: -18px;
+}
+
+#hero div .middle-text {
+  text-align: center;
+  position: relative;
+ /* display: table-cell; */
+  vertical-align: middle;
+}
+
+#hero h1 {
+  font-size: 45px;
+  font-weight: 300;
+}
+
+#hero h2 {
+  font-family: "Merriweather", georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.image-bg {
+  background-image: url('../images/bg.jpg');
+}
+
+.welcome-content {
+  min-height: 200px;
+}
+
+.sidebar-menu{
+	background-color: #191918;
+	font-size: 13px;
+	width: 250px;
+	margin-top: -15px;
+}
+
+.sidebar-menu ul{
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;	
+}
+
+.sidebar-menu li:hover{
+  opacity: 0.5;	
+}
+
+.sidebar-menu a{
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  height: 50px;
+  line-height: 53px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  padding-left: 10px;
+  text-decoration: none;
+  box-sizing: border-box;	
+  color: #999999;
+}
+
+.sidebar-menu a:before {
+  position: relative;
+  top: 8px;
+  margin: 0 10px 0 11px;
+}
+	
+.sidebar-menu a.selected{
+  color: #ffffff;
+}
+
+.sidebar-menu-container{
+	opacity: 1;
+	background-color: #191918;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="latinCMS">
+	<head>
+		<title>LatinCMS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="content-language" content="es">
+		<meta name="robots" content="INDEX, FOLLOW">
+		<meta charset="UTF-8">
+		
+		<link rel="stylesheet" href="resources/stylesheets/bootstrap.min.css" media="screen">
+		<link rel="stylesheet" href="resources/stylesheets/menu-sidebar.css" media="screen">
+	</head>
+
+	{% block additionalStylesheets %}{% endblock %}
+	
+	<body>
+		{% block body %}{% endblock %}
+		
+		<script type="text/javascript" src="resources/scripts/lib/angular.js"></script>
+		<script type="text/javascript" src="resources/scripts/lib/angular-route.min.js"></script>
+		<script type="text/javascript" src="resources/scripts/lib/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="resources/scripts/lib/angular-animate.min.js"></script>
+		<script type="text/javascript" src="resources/scripts/lib/ui-bootstrap-tpls-0.13.0.min.js"></script>
+		<script type="text/javascript" src="resources/scripts/lib/angular-ap-lateral-slide-menu.min.js"></script>
+		<script type="text/javascript" src="resources/scripts/app.js"></script>
+		<script type="text/javascript" src="resources/scripts/controller/HomeController.js"></script>
+		<script type="text/javascript" src="resources/scripts/controller/AdminController.js"></script>
+		<script type="text/javascript" src="resources/scripts/controller/PostController.js"></script>
+		<script type="text/javascript" src="resources/scripts/controller/ABMPostController.js"></script>
+		<script type="text/javascript" src="resources/scripts/service/PostService.js"></script>
+		<script type="text/javascript" src="resources/scripts/service/ComentarioService.js"></script>
+		<script type="text/javascript" src="resources/scripts/filter/filters.js"></script>
+		{% block additionalScripts %}{% endblock %}
+	</body>
+</html>

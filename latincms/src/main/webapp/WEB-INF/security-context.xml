@@ -1,0 +1,46 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security
+						http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http security="none" pattern="/resources/**" />
+	<http use-expressions="true">
+		<csrf disabled="true" />
+		<intercept-url pattern='/login' access='permitAll' />
+		<intercept-url pattern='/**' access='hasRole("ROLE_USER")' />
+		<form-login login-page="/login" authentication-failure-url="/login?error=1"
+			default-target-url="/ingresar" />
+		<logout logout-success-url="/login" />
+
+	</http>
+
+	<authentication-manager>
+		<authentication-provider user-service-ref="myUserDetailsService">
+		</authentication-provider>
+	</authentication-manager>
+
+	<beans:bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<beans:constructor-arg>
+			<beans:list>
+				<beans:bean id="roleVoter"
+					class="org.springframework.security.access.vote.RoleHierarchyVoter">
+					<beans:constructor-arg ref="roleHierarchy" />
+				</beans:bean>
+				<beans:bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
+			</beans:list>
+		</beans:constructor-arg>
+	</beans:bean>
+
+	<beans:bean id="roleHierarchy"
+		class="org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl">
+		<beans:property name="hierarchy">
+			<beans:value>
+				ROLE_ADMIN > ROLE_USER
+			</beans:value>
+		</beans:property>
+	</beans:bean>
+
+</beans:beans>
