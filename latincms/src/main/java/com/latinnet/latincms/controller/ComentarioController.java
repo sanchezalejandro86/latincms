@@ -50,7 +50,7 @@ public class ComentarioController{
 	User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 	comentario.setUsuario(usuarioDAO.findByUserName(user.getUsername()));
-	comentario.setPost(postDAO.findById(1L/*postId*/));
+	comentario.setPost(postDAO.findById(comentario.getPost().getId()));
 	comentario.setEstadoComentario(estadoComentarioDAO.findById(1L));
 	comentario.setFecha(new Date());
 

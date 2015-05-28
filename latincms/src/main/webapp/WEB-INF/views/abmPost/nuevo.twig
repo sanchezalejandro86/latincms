@@ -1,0 +1,26 @@
+{% extends "../admin.twig" %}
+
+{% block main_admin %}
+<div>
+	<fieldset>
+		<legend>A&ntilde;adir Nuevo Post</legend>
+		<form ng-submit="publicar()">
+			<div class="control-group">
+				<div class="controls">
+					<input type="text" name="titulo" placeholder="Titulo" class="form-control" ng-model="post.titulo"></input>
+				</div>
+				<br />
+			</div>
+			<div class="control-group">
+				<div class="controls">
+				    <textarea class="form-control" rows="10" placeholder="Contenido" ng-model="post.contenido"></textarea><br/>
+				</div>
+				<br />
+			</div>
+			<div class="control-group">
+				<input type="submit" value="Publicar" class="btn btn-primary"></input>
+			</div>
+		</form>
+	</fieldset>
+</div>
+{% endblock %}

@@ -19,5 +19,9 @@ function PostService($http){
 		return $http.post("post/add/", post);
 	}
 	
+	service.delete = function(postId){
+		return $http.post("post/delete", {id: postId});
+	}
+	
 	return service;
 }

@@ -77,4 +77,14 @@ public class PostController{
 	return mapper.map(post, PostDTO.class);
     }
     
+    
+    @Transactional
+    @ResponseBody
+    @RequestMapping("/delete")
+    public void deletePost(@RequestBody Post post){
+    	post = postDAO.findById(post.getId());
+    	postDAO.delete(post);
+    	return ;
+    }
+    
 }
