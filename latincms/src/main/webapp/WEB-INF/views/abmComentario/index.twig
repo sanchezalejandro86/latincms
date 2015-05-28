@@ -1,0 +1,27 @@
+{% extends "../admin.twig" %} {% block main_admin %}
+<div>
+	<table st-table="comentarios" class="table table-striped">
+		<thead>
+			<tr>
+				<th>Usuario</th>
+				<th>Contenido</th>
+				<th>Fecha</th>
+				<th>Estado</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="comentario in comentarios">
+				<td>{% verbatim %}{{comentario.usuario.username}}{% endverbatim %}</td>
+				<td>{% verbatim %}{{comentario.contenido}}{% endverbatim %}</td>
+				<td>{% verbatim %}{{comentario.fecha}}{% endverbatim %}</td>
+				<td>{% verbatim %}{{comentario.estadoComentario.descripcion}}{% endverbatim %}</td>
+				<td>
+					<a href="#"><i class="fa fa-check"></i> </a>
+					<a href="#"><i class="fa fa-times"></i> </a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock %}
