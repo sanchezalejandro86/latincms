@@ -1,6 +1,8 @@
 package com.latinnet.latincms.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -55,6 +57,20 @@ public class ComentarioController{
 	comentarioDAO.save(comentario);
 	
 	return mapper.map(comentario, ComentarioDTO.class);
+    }
+    
+    
+    @Transactional
+    @ResponseBody
+    @RequestMapping("/getAll")
+    public List<ComentarioDTO> getAll(){
+	List<ComentarioDTO> comentarios = new ArrayList<ComentarioDTO>();
+	
+	for (Comentario  p : comentarioDAO.findAll()){
+	    comentarios.add(mapper.map(p, ComentarioDTO.class));
+	}
+	
+	return comentarios;
     }
     
 }

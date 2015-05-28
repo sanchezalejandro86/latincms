@@ -7,5 +7,9 @@ function ComentarioService($http){
 		return $http.post("comentario/add", {contenido: contenido/*, postId: postId*/});
 	}
 	
+	service.getAll = function(){
+		return $http.get("comentario/getAll");
+	}
+	
 	return service;
 }

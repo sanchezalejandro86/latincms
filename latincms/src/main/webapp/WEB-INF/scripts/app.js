@@ -1,4 +1,4 @@
-var latinCMS = angular.module ( 'latinCMS' , ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ap.lateralSlideMenu']);
+var latinCMS = angular.module ( 'latinCMS' , ['ngRoute', 'ngSanitize', 'ui.bootstrap']);
 
 latinCMS.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/home', {
@@ -20,6 +20,10 @@ latinCMS.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/admin/abm/post/nuevo', {
     	templateUrl: 'admin/abm/post/nuevo',
     	controller: ABMPostController
+    });
+    $routeProvider.when('/admin/abm/comentarios', {
+    	templateUrl: 'admin/abm/comentarios/layout',
+    	controller: ABMComentarioController
     });
 
     $routeProvider.otherwise({redirectTo: '/home'});
