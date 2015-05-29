@@ -3,11 +3,13 @@ package com.latinnet.latincms.model.dto;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 public class ComentarioDTO{
     private Long id;
     private String contenido;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm a z")
     private Date fecha;
     private UsuarioDTO usuario;
     @JsonBackReference

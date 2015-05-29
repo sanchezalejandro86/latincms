@@ -21,9 +21,21 @@ latinCMS.config(['$routeProvider', function ($routeProvider) {
     	templateUrl: 'admin/abm/post/nuevo',
     	controller: ABMPostController
     });
+    $routeProvider.when('/admin/abm/page', {
+    	templateUrl: 'admin/abm/page/layout',
+    	controller: ListPageController
+    });
+    $routeProvider.when('/admin/abm/page/nuevo', {
+    	templateUrl: 'admin/abm/page/nuevo',
+    	controller: ABMPageController
+    });
     $routeProvider.when('/admin/abm/comentarios', {
     	templateUrl: 'admin/abm/comentarios/layout',
     	controller: ABMComentarioController
+    });
+    $routeProvider.when('/admin/abm/menu', {
+    	templateUrl: 'admin/abm/menu/layout',
+    	controller: ABMMenuController
     });
 
     $routeProvider.otherwise({redirectTo: '/home'});

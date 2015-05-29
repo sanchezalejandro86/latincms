@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 public class PostDTO{
@@ -11,6 +12,7 @@ public class PostDTO{
     private Long id;
     private String titulo;
     private String contenido;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm a z")
     private Date fecha;
     @JsonManagedReference
     private Set<ComentarioDTO> comentarios = new HashSet<ComentarioDTO>();

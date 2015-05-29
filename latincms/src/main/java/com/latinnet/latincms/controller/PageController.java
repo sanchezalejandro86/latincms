@@ -23,9 +23,9 @@ import com.latinnet.latincms.model.dto.PostDTO;
 import com.latinnet.latincms.model.entity.Post;
 
 
-@RequestMapping("/post")
+@RequestMapping("/page")
 @Controller
-public class PostController{
+public class PageController{
     
     @Autowired
     private PostDAO postDAO;
@@ -48,7 +48,7 @@ public class PostController{
     public List<PostDTO> getAll(){
 	List<PostDTO> posts = new ArrayList<PostDTO>();
 	
-	for (Post  p : postDAO.findAllByTipo(tipoPostDAO.findById(1L))){
+	for (Post  p : postDAO.findAllByTipo(tipoPostDAO.findById(2L))){
 	    posts.add(mapper.map(p, PostDTO.class));
 	}
 	
@@ -57,7 +57,7 @@ public class PostController{
     
     @Transactional
     @ResponseBody
-    @RequestMapping("/get/{postId}")
+    @RequestMapping("/get/{pageId}")
     public PostDTO getPost(@PathVariable  Long postId){
 	return mapper.map(postDAO.findById(postId), PostDTO.class);
     }
@@ -65,11 +65,11 @@ public class PostController{
     @Transactional
     @ResponseBody
     @RequestMapping("/add")
-    public PostDTO addPost(@RequestBody Post post){
+    public PostDTO addPage(@RequestBody Post post){
 	User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 	post.setUsuario(usuarioDAO.findByUserName(user.getUsername()));
-	post.setTipoPost(tipoPostDAO.findById(1L));
+	post.setTipoPost(tipoPostDAO.findById(2L));
 	post.setFecha(new Date());
 
 	postDAO.save(post);
@@ -81,7 +81,7 @@ public class PostController{
     @Transactional
     @ResponseBody
     @RequestMapping("/delete")
-    public void deletePost(@RequestBody Post post){
+    public void deletePage(@RequestBody Post post){
     	post = postDAO.findById(post.getId());
     	postDAO.delete(post);
     	return ;

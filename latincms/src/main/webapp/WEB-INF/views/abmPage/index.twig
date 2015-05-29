@@ -1,0 +1,32 @@
+{% extends "../admin.twig" %}
+
+{% block main_admin %}
+<div>
+	<a class="btn btn-primary" href="#/admin/abm/page/nuevo">A&ntilde;adir Nueva</a><br />
+	<br />
+	<table st-table="posts" class="table table-striped">
+		<thead>
+			<tr>
+				<th>T&iacute;tulo</th>
+				<th>Autor</th>
+				<th>Comentarios</th>
+				<th>Fecha</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="page in pages">
+				<td><a href="#/admin/abm/page/">{% verbatim %}{{page.titulo}}{% endverbatim %}</td>
+				<td>{% verbatim %}{{page.usuario.username}}{% endverbatim %}</td>
+				<td><a href="#/admin/abm/comentarios">{% verbatim %}{{page.comentarios.length}}{% endverbatim %}</a></td>
+				<td>{% verbatim %}{{page.fecha}}{% endverbatim %}</td>
+				<td>
+					<a href=""><i class="fa fa-pencil"></i> </a>
+					<a href="" ng-click="deletePage(page.id)"><i class="fa fa-times"></i> </a>
+					<a href="#/page/{% verbatim %}{{page.id}}{% endverbatim %}"><i class="fa fa-file-o"></i> </a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "../admin.twig" %}
+
+{% block main_admin %}
+<div class="row">
+	<h1>Editar Men&uacute;s</h1>
+	<accordion class="col-md-4">
+	    <accordion-group heading="P&aacute;ginas" is-open="true" is-disabled="false">
+	   		<ul>
+            	<li ng-repeat="page in pages">
+            		<input type="checkbox">{% verbatim %}{{page.titulo}}{% endverbatim %}</input>
+            	</li>
+        	</ul>
+        	<div style="width: 100%;text-align: right">
+           		<button class="btn btn-default">A&ntilde;adir al men&uacute;</button>
+        	</div>
+	    </accordion-group>
+	    <accordion-group heading="Enlaces">
+			<div class="control-group">
+            	<label class="control-label">URL:</label>
+                	<div class="controls">
+                    	<input type="text" name="url" id="url" placeholder="URL" class="form-control" ng-model="link.url"></input>
+                    </div>
+                    <br/>
+            </div>
+            <div class="control-group">
+            	<label class="control-label">Texto:</label>
+                <div class="controls">
+                	<input type="text" name="texto" id="texto" placeholder="Texto" class="form-control" ng-model="link.texto"></input>
+                </div>
+                <br/>
+            </div>
+            <div style="width: 100%;text-align: right">
+            	<button class="btn btn-default">A&ntilde;adir al men&uacute;</button>
+            </div>
+	    </accordion-group>
+	</accordion>
+	<div class="col-md-4">
+	
+	</div>
+</div>
+{% endblock %}
