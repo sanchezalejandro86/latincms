@@ -46,11 +46,24 @@ public class MyUserDetailsService implements UserDetailsService {
 		Set<GrantedAuthority> setAuths = new HashSet<GrantedAuthority>();
 
 		// Build user's authorities
-		setAuths.add(new SimpleGrantedAuthority("ROLE_USER"/*perfil.getDescripcion()*/));
+		
+		
+		setAuths.add(new SimpleGrantedAuthority(getRole(perfil)));
 
 		List<GrantedAuthority> Result = new ArrayList<GrantedAuthority>(setAuths);
 
 		return Result;
+	}
+
+	private String getRole(Perfil perfil) {
+		switch(perfil.getId().intValue()){
+		case 1:
+			return "ROLE_ADMIN";
+		case 2:
+			return "ROLE_USER";
+		default: 
+			throw new RuntimeException("Tipo de Perfil desconocido: " + perfil.getId());
+		}
 	}
 
 }

@@ -1,0 +1,47 @@
+{% extends "../admin.twig" %}
+
+{% block main_admin %}
+<div>
+	<fieldset>
+		<legend>A&ntilde;adir Nuevo Usuario</legend>
+		<form ng-submit="registrar()">
+			<div class="control-group">
+				<div class="controls">
+					<input type="text" name="username" placeholder="Usuario" class="form-control" ng-model="user.username"></input>
+				</div>
+				<br />
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<input type="text" name="nombre" placeholder="Nombre" class="form-control" ng-model="user.nombre"></input>
+				</div>
+				<br />
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<input type="text" name="apellido" placeholder="Apellido" class="form-control" ng-model="user.apellido"></input>
+				</div>
+				<br />
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<input type="email" name="email" placeholder="Email" class="form-control" ng-model="user.email"></input>
+				</div>
+				<br />
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<select ng-model="user.perfil.id" convert-to-number>
+					  <option value="1">Administrador</option>
+					  <option value="2">Suscriptor</option>
+					</select>
+				</div>
+				<br />
+			</div>
+			<div class="control-group">
+				<input type="submit" value="Publicar" class="btn btn-primary"></input>
+			</div>
+		</form>
+	</fieldset>
+</div>
+{% endblock %}

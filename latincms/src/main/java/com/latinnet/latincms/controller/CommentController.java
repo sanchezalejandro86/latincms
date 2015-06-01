@@ -22,9 +22,9 @@ import com.latinnet.latincms.model.dao.UsuarioDAO;
 import com.latinnet.latincms.model.dto.ComentarioDTO;
 import com.latinnet.latincms.model.entity.Comentario;
 
-@RequestMapping("/comentario")
+@RequestMapping("/comment")
 @Controller
-public class ComentarioController{
+public class CommentController{
     
     @Autowired
     private ComentarioDAO comentarioDAO;
@@ -38,15 +38,10 @@ public class ComentarioController{
     @Autowired
     Mapper mapper;
     
-    @RequestMapping("/layout")
-    public String getHomePage(){
-	return "comentarios";
-    }
- 
     @Transactional
     @ResponseBody
     @RequestMapping("/add")
-    public ComentarioDTO addComentario(@RequestBody Comentario comentario){
+    public ComentarioDTO addComment(@RequestBody Comentario comentario){
 	User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 	comentario.setUsuario(usuarioDAO.findByUserName(user.getUsername()));

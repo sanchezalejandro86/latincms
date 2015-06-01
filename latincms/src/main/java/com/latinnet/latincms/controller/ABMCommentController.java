@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.latinnet.latincms.model.dao.PostDAO;
 
-@RequestMapping("/admin/abm/comentarios")
+@RequestMapping("/admin/abm/comment")
 @Controller
-public class ABMComentarioController{
+public class ABMCommentController{
     @Autowired
     private PostDAO postDAO;
     
@@ -18,7 +18,7 @@ public class ABMComentarioController{
     
     @RequestMapping("/layout")
     public String getHomePage(){
-	return "abmComentario/index";
+	return "abmComment/index";
     }
     
 }

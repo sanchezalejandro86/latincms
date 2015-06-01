@@ -9,9 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -88,8 +88,8 @@ public class Usuario implements BusinessObject{
 	this.email = email;
     }
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
+    @ManyToOne
+    @JoinColumn(name = "perfil_id", nullable = false)
     public Perfil getPerfil(){
 	return this.perfil;
     }

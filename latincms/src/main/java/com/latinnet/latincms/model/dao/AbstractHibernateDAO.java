@@ -39,7 +39,7 @@ public class AbstractHibernateDAO<Entity extends BusinessObject, PK extends Seri
     }
 
     public Entity findById(PK id){
-	return (Entity) sessionFactory.getCurrentSession().load(domainClass, id);
+	return (Entity) sessionFactory.getCurrentSession().get(domainClass, id);
     }
 
     public List<Entity> findAll(){

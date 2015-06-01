@@ -1,0 +1,33 @@
+{% extends "../admin.twig" %}
+
+{% block main_admin %}
+<div>
+	<a class="btn btn-primary" href="#/admin/abm/user/nuevo">A&ntilde;adir Nuevo</a><br />
+	<br />
+	<table st-table="usuarios" class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nombre del Usuario</th>
+				<th>Nombre y Apellido</th>
+				<th>Email</th>
+				<th>Perfil</th>
+				<th>Posts</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in users">
+				<td><a href="#/admin/abm/usuario/">{% verbatim %}{{user.username}}{% endverbatim %}</td>
+				<td><a href="#/admin/abm/usuario/">{% verbatim %}{{user.nombre}} {{user.apellido}}{% endverbatim %}</td>
+				<td><a href="mailto:{% verbatim %}{{user.email}}{% endverbatim %}">{% verbatim %}{{user.email}}{% endverbatim %}</a></td>
+				<td>{% verbatim %}{{user.perfil.descripcion}}{% endverbatim %}</td>
+				<td>{% verbatim %}{{user.posts.length}}{% endverbatim %}</td>
+				<td>
+					<a href=""><i class="fa fa-pencil"></i> </a>
+					<a href="" ng-click="deleteUsuario(user.id)"><i class="fa fa-times"></i> </a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock %}

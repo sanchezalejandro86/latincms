@@ -1,12 +1,15 @@
 package com.latinnet.latincms.model.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,8 +18,11 @@ public class Perfil implements BusinessObject{
 
     private Long id;
     private String descripcion;
-    private Usuario usuario;
+    private Set<Usuario> usuarios = new HashSet<Usuario>();
 
+    public Perfil() {
+	}
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -37,13 +43,13 @@ public class Perfil implements BusinessObject{
 	this.descripcion = descripcion;
     }
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "perfil")
-    public Usuario getUsuario(){
-	return this.usuario;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "perfil")
+    public Set<Usuario> getUsuarios(){
+	return this.usuarios;
     }
 
-    public void setUsuario(Usuario usuario){
-	this.usuario = usuario;
+    public void setUsuarios(Set<Usuario> usuarios){
+	this.usuarios = usuarios;
     }
 
 }

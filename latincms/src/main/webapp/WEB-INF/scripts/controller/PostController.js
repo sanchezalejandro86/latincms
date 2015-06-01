@@ -1,6 +1,6 @@
-latinCMS.controller("PostController", ["$scope", "$sce", "$routeParams", "PostService", "ComentarioService", PostController]);
+latinCMS.controller("PostController", ["$scope", "$sce", "$routeParams", "PostService", "CommentService", PostController]);
 
-function PostController($scope, $sce, $routeParams, PostService, ComentarioService){
+function PostController($scope, $sce, $routeParams, PostService, CommentService){
 	 var postId = $routeParams.postId;
 	 
 	 //TODO Si postId es null mostrar error
@@ -10,7 +10,7 @@ function PostController($scope, $sce, $routeParams, PostService, ComentarioServi
 	 });
 	 
 	 $scope.publicar = function(){
-		 ComentarioService.publicar($scope.textoComentario, postId).then(function(result){
+		 CommentService.publicar($scope.textoComentario, postId).then(function(result){
 			 $scope.textoComentario = "";
 			 $scope.post.comentarios.push(result.data);
 		 });
