@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -86,14 +87,14 @@ public class Post implements BusinessObject{
     @ManyToOne()
     @JoinColumn(name = "tipo_post_id", nullable = false)
     public TipoPost getTipoPost() {
-		return tipoPost;
-	}
+	return tipoPost;
+    }
 
-	public void setTipoPost(TipoPost tipoPost) {
-		this.tipoPost = tipoPost;
-	}
+    public void setTipoPost(TipoPost tipoPost) {
+	this.tipoPost = tipoPost;
+    }
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "post")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "post", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     public Set<Comentario> getComentarios(){
         return comentarios;
     }

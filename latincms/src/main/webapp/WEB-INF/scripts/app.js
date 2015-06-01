@@ -1,4 +1,4 @@
-var latinCMS = angular.module ( 'latinCMS' , ['ngRoute', 'ngSanitize', 'ui.bootstrap']);
+var latinCMS = angular.module ( 'latinCMS' , ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'ui.tree']);
 
 latinCMS.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/home', {

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LatinCMS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="content-language" content="es">
+		<meta name="robots" content="INDEX, FOLLOW">
+		
+		<link rel="stylesheet" href="resources/stylesheets/styles.css" media="screen">
+		<link rel="stylesheet" href="resources/stylesheets/bootstrap.min.css" media="screen">
+		
+		<style type="text/css">
+		body {
+			background-image: url("resources/images/cms.jpg");
+			background-size: 100%;
+		}
+		
+		#login-form{
+			float: right;
+			width: 500px;
+			background-image: url("resources/images/background.png");
+			padding: 60px;
+			right: 60px;
+			top: 60px;
+  			position: absolute;
+  			border: 1px solid;
+  			border-radius: 25px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="login-form">
+			<div style="width: 100%; text-align: right">
+				<img src="resources/images/logo.png" />
+			</div>
+			<fieldset class="login">
+				<legend>Login</legend>
+				<form action="login" method="POST" id="formulario"
+					class="form-signin">
+					<h2 class="form-signin-heading">Ingrese</h2>
+	
+					<div class="control-group">
+						<label class="control-label">Usuario:</label>
+	
+						<div class="controls">
+							<input type="text" name="username" id="usuario"
+								placeholder="Usuario" class="form-control"></input>
+						</div>
+						<br />
+					</div>
+					<div class="control-group">
+						<label class="control-label">Contrase&nacute;a:</label>
+	
+						<div class="controls">
+							<input type="password" name="password" id="password"
+								placeholder="Contrase&nacute;a" class="form-control"></input>
+						</div>
+						<br />
+					</div>
+					<div class="control-group">
+						<input type="submit" value="Ingresar" class="btn btn-lg btn-primary btn-block"></input>
+					</div>
+					<p style="margin-top: 10px">
+						<a href="/LatinCMS/signup.html">Registrarse</a>
+					</p>
+				</form>
+			</fieldset>
+		</div>
+{# 		<script type="text/javascript" src="resources/lib/scripts/jquery-2.1.4.min.js"></script>#}
+{# 		<script type="text/javascript" src="resources/lib/scripts/bootstrap.min.js"></script>#}
+	</body>
+</html>

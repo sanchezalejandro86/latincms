@@ -8,66 +8,52 @@
 		
 		<link rel="stylesheet" href="resources/stylesheets/styles.css" media="screen">
 		<link rel="stylesheet" href="resources/stylesheets/bootstrap.min.css" media="screen">
-		
-		<style type="text/css">
-		body {
-			background-image: url("resources/images/cms.jpg");
-			background-size: 100%;
-		}
-		
-		#login-form{
-			float: right;
-			width: 500px;
-			background-image: url("resources/images/background.png");
-			padding: 60px;
-			right: 60px;
-			top: 60px;
-  			position: absolute;
-  			border: 1px solid;
-  			border-radius: 25px;
-		}
-		</style>
-	</head>
+		<link rel="stylesheet" href="resources/stylesheets/font-awesome.min.css" media="screen">
+		</head>
 
 	<body>
-		<div id="login-form">
-			<div style="width: 100%; text-align: right">
-				<img src="resources/images/logo.png" />
-			</div>
-			<fieldset class="login">
-				<legend>Login</legend>
-				<form action="login" method="POST" id="formulario"
-					class="form-signin">
-					<h2 class="form-signin-heading">Ingrese</h2>
 	
-					<div class="control-group">
-						<label class="control-label">Usuario:</label>
-	
-						<div class="controls">
-							<input type="text" name="username" id="usuario"
-								placeholder="Usuario" class="form-control"></input>
-						</div>
-						<br />
-					</div>
-					<div class="control-group">
-						<label class="control-label">Contrase&nacute;a:</label>
-	
-						<div class="controls">
-							<input type="password" name="password" id="password"
-								placeholder="Contrase&nacute;a" class="form-control"></input>
-						</div>
-						<br />
-					</div>
-					<div class="control-group">
-						<input type="submit" value="Ingresar" class="btn btn-lg btn-primary btn-block"></input>
-					</div>
-					<p style="margin-top: 10px">
-						<a href="/LatinCMS/signup.html">Registrarse</a>
-					</p>
-				</form>
-			</fieldset>
-		</div>
-{# 		<script type="text/javascript" src="resources/lib/scripts/jquery-2.1.4.min.js"></script>#}
-{# 		<script type="text/javascript" src="resources/lib/scripts/bootstrap.min.js"></script>#}
+			<section id="signin_main" class="authenty signin-main" style="height: 100%;">
+				<div class="section-content">
+				  <div class="wrap">
+					  <div class="container">	  
+							<div class="form-wrap">
+								<div class="row">
+								  <div class="title animated fadeInDown" data-animation="fadeInDown" data-animation-delay=".8s" style="-webkit-animation-delay: 0.8s;">
+									  <h1>LatinCMS</h1>
+									  <h5>Administraci&oacute;n de Contenidos</h5>
+								  </div>
+									<div id="form_1" data-animation="bounceIn" class="animated bounceIn">
+										<div class="form-header">
+										  <i class="fa fa-user"></i>
+									  </div>
+									  <div class="form-main">
+									  	<form method="post" action="login">		
+											<div class="form-group">
+								  				<input type="text" id="un_1" class="form-control" placeholder="Username" required="required" name="username">
+												<input type="password" id="pw_1" class="form-control" placeholder="Password" required="required" name="password">
+										  	</div>
+									    	<button id="signIn_1" type="submit" class="btn btn-block signin">Sign In</button>
+									 	</form>
+									  </div>
+										<div class="form-footer">
+											<div class="row">
+												<div class="col-xs-7">
+													<i class="fa fa-unlock-alt"></i>
+													<a href="#password_recovery" id="forgot_from_1">Olvid&oacute; su contrase&ntilde;a?</a>
+												</div>
+												<div class="col-xs-5">
+													<i class="fa fa-check"></i>
+													<a href="#signup_window" id="signup_from_1">Registrarse</a>
+												</div>
+											</div>
+										</div>		
+								  </div>
+								</div>
+							</div>
+					  </div>
+				  </div>
+				</div>
+			</section>
 	</body>
 </html>

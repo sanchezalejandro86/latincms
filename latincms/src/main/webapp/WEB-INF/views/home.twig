@@ -1,27 +1,27 @@
-<section id="hero" class="light-typo">
-	<div id="cover-image" class="image-bg animated fadeIn" style="background-position: 50% 50%;">
-	<div class="container welcome-content">
-		<div class="middle-text">
-			<h1>Bienvenido a LatinCMS</h1>
-			<h2><b>LatinCMS</b> es un administrador de contenidos creado <br>por <b>Alejandro S&aacute;nchez</b></h2>
-		</div>
-	</div>
-	</div>
-</section>
+{# <section id="hero" class="light-typo">#}
+{# 	<div id="cover-image" class="image-bg animated fadeIn" style="background-position: 50% 50%;">#}
+{# 	<div class="container welcome-content">#}
+{# 		<div class="middle-text">#}
+{# 			<h1>Bienvenido a LatinCMS</h1>#}
+{# 			<h2><b>LatinCMS</b> es un administrador de contenidos creado <br>por <b>Alejandro S&aacute;nchez</b></h2>#}
+{# 		</div>#}
+{# 	</div>#}
+{# 	</div>#}
+{# </section>#}
 <div class="container">
-	<div class="row">
+	<div class="row blog-main">
 		<div class="col-md-8">
 			<div class="post-container">
-				<div ng-repeat="post in posts" class="post">
-					<h2>
-						<a href="#/post/{% verbatim %}{{post.id}}{% endverbatim %}">{% verbatim %}{{post.titulo}}{% endverbatim %}</a>
-					</h2>
-					<p class="lead">{% verbatim %}{{post.usuario.nombre}}{% endverbatim %}</p>
-					<p><span class="glyphicon glyphicon-time"></span> Publicado el {% verbatim %}{{post.fecha}}{% endverbatim %}</p>
-					<hr >
-					<p>{% verbatim %}{{post.contenido | excerpt}}{% endverbatim %}</p>
-					<a class="btn btn-primary" href="#/post/{% verbatim %}{{post.id}}{% endverbatim %}">Leer m&aacutes <span class="glyphicon glyphicon-chevron-right"></span></a>
-				</div>
+			<article ng-repeat="post in posts" class="post blog-teaser">
+				<h2>
+					<a href="#/post/{% verbatim %}{{post.id}}{% endverbatim %}">{% verbatim %}{{post.titulo}}{% endverbatim %}</a>
+				</h2>
+				<p class="lead">{% verbatim %}{{post.usuario.nombre}}{% endverbatim %}</p>
+				<p><span class="glyphicon glyphicon-time"></span> Publicado el {% verbatim %}{{post.fecha}}{% endverbatim %}</p>
+				<hr >
+				<p>{% verbatim %}{{post.contenido | excerpt}}{% endverbatim %}</p>
+				<a class="btn btn-primary" href="#/post/{% verbatim %}{{post.id}}{% endverbatim %}">Leer m&aacutes <span class="glyphicon glyphicon-chevron-right"></span></a>
+			</article>
 				<hr>
 			 </div>
 			 <ul class="pager">
@@ -32,6 +32,14 @@
 		</div>
 		<div class="col-md-4">
 		<h3>Archivo</h3>
+		<li ng-repeat="data in tree" ng-include="'tree_item_renderer.html'" class="archivo-tree"></li>
 		</div>
 	</div>
 </div>
+<script type="text/ng-template"  id="tree_item_renderer.html">
+<i class="fa " ng-class="{'fa-caret-down' : data.open, 'fa-caret-right' : !data.open}" ng-click="add(data)" ng-show="data.level<3"></i>
+{%verbatim%}{{data.name}}{%endverbatim%}
+    <ul ng-show="data.open">
+        <li ng-repeat="data in data.nodes" ng-include="'tree_item_renderer.html'"></li>
+    </ul>
+</script>

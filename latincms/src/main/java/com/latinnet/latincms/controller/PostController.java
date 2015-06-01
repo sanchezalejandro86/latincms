@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.latinnet.latincms.model.dao.PostDAO;
 import com.latinnet.latincms.model.dao.TipoPostDAO;
 import com.latinnet.latincms.model.dao.UsuarioDAO;
+import com.latinnet.latincms.model.dto.NodeDTO;
 import com.latinnet.latincms.model.dto.PostDTO;
 import com.latinnet.latincms.model.entity.Post;
 
@@ -87,4 +88,41 @@ public class PostController{
     	return ;
     }
     
+    @Transactional
+    @ResponseBody
+    @RequestMapping("/getYears")
+    public List<NodeDTO> getYears(){
+	List<NodeDTO> anios = new ArrayList<NodeDTO>();
+	
+	anios.add(new NodeDTO("2015", 1));
+	anios.add(new NodeDTO("2014", 1));
+	anios.add(new NodeDTO("2013", 1));
+	
+	return anios;
+    }
+    
+    @Transactional
+    @ResponseBody
+    @RequestMapping("/getMonths/{year}")
+    public List<NodeDTO> getMonth(@PathVariable int year){
+	List<NodeDTO> meses = new ArrayList<NodeDTO>();
+	
+	meses.add(new NodeDTO("Marzo", 2));
+	meses.add(new NodeDTO("Abril", 2));
+	meses.add(new NodeDTO("Mayo", 2));
+	
+	return meses;
+    }
+    
+    @Transactional
+    @ResponseBody
+    @RequestMapping("/getPostsByMonth/{month}")
+    public List<NodeDTO> getMonths(@PathVariable String month){
+	List<NodeDTO> titulos = new ArrayList<NodeDTO>();
+	List<PostDTO> posts = this.getAll();
+	for (PostDTO p : posts){
+	    titulos.add(new NodeDTO(p.getTitulo(), 3));
+	}
+	return titulos;
+    }
 }

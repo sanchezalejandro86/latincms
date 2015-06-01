@@ -101,7 +101,7 @@ p {
 	background-color: #191918;
 	font-size: 13px;
 	width: 250px;
-	margin-top: -20px;
+/* 	margin-top: -20px; */
 	float: left;
 	height: 100%;
 }
@@ -151,8 +151,314 @@ p {
 	height: 100%;
 	width: 80%;
 	padding-left: 30px;
+	padding-top: 25px;
 }
 
 html, body{
 	height: 100%;
+}
+
+.widewrapper.copyright {
+  background-color: #37424c;
+  color: #7b8690;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.widewrapper.masthead {
+  background-color: #242b32;
+  color: #f8f8f9;
+}
+
+.masthead {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+#mobile-nav-toggle {
+  display: none;
+  margin-top: 10px;
+}
+
+.widewrapper.subheader {
+  background-color: #37424c;
+  color: #7b8690;
+  font-size: 16px;
+  min-height: 63px;
+}
+
+.tales-breadcrumb {
+  color: #7b8690;
+  float: left;
+  margin-top: 19px;
+}
+
+.tales-searchbox {
+  float: right;
+  display: inline-block;
+  min-width: 210px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.tales-nav .nav-pills > .active > a {
+  background-color: #37424c;
+}
+
+.tales-nav .nav-pills > li > a {
+  color: #f8f8f9;
+  padding: 11px 16px;
+  line-height: 14px;
+}
+
+.navbar-brand, .navbar-nav>li>a {
+  text-shadow: 0 1px 0 rgba(255,255,255,.25);
+}
+
+.tales-searchbox .searchfield {
+  border: none;
+  height: 22px;
+  line-height: 22px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 5px 6px 4px 6px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-bottom: 0;
+  width: 160px;
+  font-size: 16px;
+  -webkit-border-top-right-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  border-top-right-radius: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+  border-bottom-right-radius: 15px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-bottom-left-radius: 0px;
+  margin-left: -4px;
+  outline: none;
+}
+
+.tales-searchbox .searchbutton, .tales-searchbox .searchfield {
+  color: #7b8690;
+  background-color: #242b32;
+}
+
+.tales-searchbox .fa {
+  color: #7b8690;
+  font-size: 19px;
+}
+
+.tales-breadcrumb a {
+  color: #7b8690;
+}
+
+.tales-searchbox .searchbutton {
+  display: inline-block;
+  border: none;
+  line-height: 20px;
+  padding: 4px 5px 4px 15px;
+  height: 31px;
+  vertical-align: middle;
+  -webkit-border-top-left-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  border-top-left-radius: 15px;
+  -webkit-border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.tales-searchbox .searchbutton, .tales-searchbox .searchfield {
+  color: #7b8690;
+  background-color: #242b32;
+}
+
+    
+ ::selection {
+  background: #566572;
+  color: #feffff;
+}
+
+.blog-teaser {
+  background-color: #ececec;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 5px #a8a8a8;
+  -moz-box-shadow: 0px 1px 5px #a8a8a8;
+  box-shadow: 0px 1px 5px #a8a8a8;
+  margin-bottom: 40px;
+}
+
+.blog-main {
+  padding-top: 36px;
+  padding-bottom: 20px;
+}
+
+#authenty_preview > section {
+  min-height: 1024px;
+  background-position: center center;
+  background-size: cover;
+}
+
+.authenty.signin-main {
+  background-color: #eaeaea;
+}
+
+.authenty {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #eaeaea;
+}
+
+.authenty.signin-main .form-header {
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  background-color: #fff;
+}
+
+.section-content {
+  overflow: hidden;
+  padding: 20px;
+}
+
+.authenty.signin-main .wrap {
+  padding-top: 80px;
+}
+
+.authenty .wrap {
+  width: 100%;
+}
+
+.authenty {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #eaeaea;
+}
+
+.authenty.signin-main .form-wrap {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.authenty.signin-main .title {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.authenty.signin-main .form-header .fa-user {
+  font-size: 50px;
+  color: #fff;
+  border-radius: 50%;
+  border: 3px solid #E7E7E7;
+  padding: 15px 20px;
+  background: #f6f8f9;
+  background: -moz-linear-gradient(-45deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #f6f8f9), color-stop(50%, #e5ebee), color-stop(51%, #d7dee3), color-stop(100%, #f5f7f9));
+  background: -webkit-linear-gradient(-45deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  background: -o-linear-gradient(-45deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  background: -ms-linear-gradient(-45deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=1 );
+}
+
+.authenty.signin-main .form-main {
+  background-color: #505050;
+  padding: 40px 50px;
+}
+
+.authenty.signin-main input[type="text"], .authenty.signin-main input[type="password"] {
+  background-color: #404040;
+  padding-left: 20px;
+  border-radius: 0;
+  border: none;
+  margin-bottom: 10px;
+  color: #ccc;
+  height: 43px;
+}
+
+.authenty .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #555555;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.authenty.signin-main .signin {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #FF8627;
+  color: #fff;
+  -webkit-transition: background-color 300ms linear;
+  -moz-transition: background-color 300ms linear;
+  -o-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+
+.authenty.signin-main .form-footer {
+  background-color: #404040;
+  padding: 20px 50px;
+}
+
+
+.authenty.signin-main .form-footer .fa-unlock-alt {
+  font-size: 10pt;
+  color: #6f6f6f;
+  border-radius: 50%;
+  background-color: #505050;
+  padding: 5px 8px;
+  margin-right: 7px;
+}
+
+.authenty.signin-main .form-footer a {
+  color: #999;
+  font-size: 10pt;
+}
+
+.authenty.signin-main .form-footer .fa-check {
+  font-size: 10pt;
+  color: #6f6f6f;
+  border-radius: 50%;
+  background-color: #505050;
+  padding: 5px;
+  margin-right: 7px;
+}
+
+.authenty.signin-main .title h1 {
+  font-size: 40pt;
+}
+
+.authenty h1 {
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.authenty h1, .authenty h2, .authenty h3, .authenty h4, .authenty h5, .authenty h6 {
+  font-weight: 400;
+}
+
+.h5 {
+  font-size: 14px;
+}
+
+.archivo-tree, .archivo-tree ul li {
+  list-style: none;
 }

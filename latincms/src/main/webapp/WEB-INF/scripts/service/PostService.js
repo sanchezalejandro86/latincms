@@ -23,5 +23,17 @@ function PostService($http){
 		return $http.post("post/delete", {id: postId});
 	}
 	
+	service.getYears = function(){
+		return $http.get("post/getYears");
+	}
+	
+	service.getMonths = function(year){
+		return $http.get("post/getMonths/"+year);
+	}
+	
+	service.getPostsByMonth = function(month){
+		return $http.get("post/getPostsByMonth/"+month);
+	}
+	
 	return service;
 }
