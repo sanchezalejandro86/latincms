@@ -8,7 +8,7 @@ function ABMUserController($scope, $location, UserService){
 			$scope.user.apellido = '';
 			$scope.user.email = '';
 			$scope.user.perfil.id = '';
-			$location.path("/admin/abm/user"); 
+			$location.path("/admin/user"); 
 		});
 	}
 }

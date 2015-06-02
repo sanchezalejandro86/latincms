@@ -2,7 +2,7 @@
 
 {% block main_admin %}
 <div>
-	<a class="btn btn-primary" href="#/admin/abm/user/nuevo">A&ntilde;adir Nuevo</a><br />
+	<a class="btn btn-primary" href="#/admin/user/nuevo">A&ntilde;adir Nuevo</a><br />
 	<br />
 	<table st-table="usuarios" class="table table-striped">
 		<thead>
@@ -17,14 +17,14 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="user in users">
-				<td><a href="#/admin/abm/usuario/">{% verbatim %}{{user.username}}{% endverbatim %}</td>
-				<td><a href="#/admin/abm/usuario/">{% verbatim %}{{user.nombre}} {{user.apellido}}{% endverbatim %}</td>
+				<td><a href="#/admin/usuario/">{% verbatim %}{{user.username}}{% endverbatim %}</td>
+				<td><a href="#/admin/usuario/">{% verbatim %}{{user.nombre}} {{user.apellido}}{% endverbatim %}</td>
 				<td><a href="mailto:{% verbatim %}{{user.email}}{% endverbatim %}">{% verbatim %}{{user.email}}{% endverbatim %}</a></td>
 				<td>{% verbatim %}{{user.perfil.descripcion}}{% endverbatim %}</td>
 				<td>{% verbatim %}{{user.posts.length}}{% endverbatim %}</td>
 				<td>
 					<a href=""><i class="fa fa-pencil"></i> </a>
-					<a href="" ng-click="deleteUsuario(user.id)"><i class="fa fa-times"></i> </a>
+					<a href="" ng-click="deleteUser(user.id)"><i class="fa fa-times"></i> </a>
 				</td>
 			</tr>
 		</tbody>

@@ -5,7 +5,7 @@ function ABMPostController($scope, $location, PostService){
 		PostService.add($scope.post).then(function(result){
 			$scope.post.titulo = "";
 			$scope.post.contenido = "";
-			$location.path("/admin/abm/post"); 
+			$location.path("/admin/post"); 
 		});
 	}
 }

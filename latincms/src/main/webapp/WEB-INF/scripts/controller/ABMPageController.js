@@ -5,7 +5,7 @@ function ABMPageController($scope, $location, PageService){
 		PageService.add($scope.page).then(function(result){
 			$scope.page.titulo = "";
 			$scope.page.contenido = "";
-			$location.path("/admin/abm/page"); 
+			$location.path("/admin/page"); 
 		});
 	}
 }

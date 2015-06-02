@@ -1,3 +1,5 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
 p {
   line-height: 24px;
 }
@@ -114,7 +116,12 @@ p {
 }
 
 .sidebar-menu li:hover{
-  opacity: 0.5;	
+/*   opacity: 0.5;	 */
+  background-color: #FF8627
+}
+
+.sidebar-menu li a:hover{
+  color: #fff;
 }
 
 .sidebar-menu a{
@@ -461,4 +468,227 @@ html, body{
 
 .archivo-tree, .archivo-tree ul li {
   list-style: none;
+}
+
+.navbar .nav > li{
+	background-color: #37424c;
+}
+
+.navbar ul{
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.navbar-inverse {
+  background-color: #242b32 !important;
+  border-color: #242b32 !important;
+}
+
+.breadcrumb{
+	background-color: transparent !important;
+}
+
+.sidebar-box h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #444;
+  text-transform: uppercase;
+}
+
+#footer {
+  background: #111;
+  font-size: 0.9em;
+  padding: 80px 0 0;
+  position: relative;
+  clear: both;
+}
+
+.margin30 {
+  margin-bottom: 30px;
+}
+
+.footer-col h3 {
+  color: #fff;
+  margin-bottom: 35px;
+  font-size: 22px;
+  text-transform: capitalize;
+  font-weight: 300;
+  font-style: normal;
+}
+
+#footer p {
+  color: #555;
+  line-height: 24px;
+  margin: 0 0 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.social-1 {
+  margin: 0;
+  padding: 0;
+}
+
+.social-1 li {
+  padding: 0px;
+}
+
+#footer a {
+  color: #333;
+  -moz-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.social-1 li a i {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  -moz-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.social-1 li a i.fa-facebook {
+  background-color: #3b5998;
+}
+
+.social-1 li a i.fa-twitter {
+  background-color: #0084b4;
+}
+
+.social-1 li a i.fa-google-plus {
+  background-color: #C63D2D;
+}
+
+.social-1 li a i.fa-pinterest {
+  background-color: #cb2027;
+}
+
+.social-1 li a i.fa-dribbble {
+  background-color: #ea4c89;
+}
+
+.contact p {
+  margin-bottom: 10px;
+}
+
+.contact strong {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.contact a {
+  color: #777;
+}
+
+.footer-btm {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #0c0c0c;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.btn-theme-dark {
+  background-color: #333;
+  color: #fff;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#footer .form-control{
+	border: 1px solid #ddd;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  font-size: 12px;
+  color: #7a7a7a;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  background: #FFF;
+  -moz-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.subscribe-form .form-control {
+  height: 46px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.wrapper-admin>.aside {
+  height: 1px;
+  min-height: 100%;
+}
+
+.wrapper-admin>aside {
+  position: fixed;
+}
+
+.wrapper-admin>.aside {
+  position: absolute;
+  width: 220px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 110;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+/*   background-color: #fff; */
+}
+
+.wrapper-admin>.aside>.aside-inner {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.wrapper-admin>.aside .aside-inner {
+  padding-top: 80px;
+  height: 100%;
+  width: 220px;
+  overflow: hidden;
+}
+
+.wrapper-admin>footer, .wrapper-admin>section {
+  margin-left: 220px;
+/*   background-color: #f5f7fa; */
+}
+
+.wrapper-admin>footer{
+  clear: both;	
+}
+
+@media only screen and (min-width:768px)
+.content-wrapper {
+  padding: 20px;
+}
+
+.content-wrapper {
+  padding: 15px;
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,.15);
+  margin-top: -1px;
+}
+
+.aside-inner ul li {
+  padding: 0px 15px;
 }

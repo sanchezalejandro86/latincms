@@ -2,7 +2,7 @@
 
 {% block main_admin %}
 <div>
-	<a class="btn btn-primary" href="#/admin/abm/post/nuevo">A&ntilde;adir Nuevo</a><br />
+	<a class="btn btn-primary" href="#/admin/post/nuevo">A&ntilde;adir Nuevo</a><br />
 	<br />
 	<table st-table="posts" class="table table-striped">
 		<thead>
@@ -16,9 +16,9 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="post in posts">
-				<td><a href="#/admin/abm/post/">{% verbatim %}{{post.titulo}}{% endverbatim %}</td>
+				<td><a href="#/admin/post/">{% verbatim %}{{post.titulo}}{% endverbatim %}</td>
 				<td>{% verbatim %}{{post.usuario.username}}{% endverbatim %}</td>
-				<td><a href="#/admin/abm/comentarios">{% verbatim %}{{post.comentarios.length}}{% endverbatim %}</a></td>
+				<td><a href="#/admin/comment">{% verbatim %}{{post.comentarios.length}}{% endverbatim %}</a></td>
 				<td>{% verbatim %}{{post.fecha}}{% endverbatim %}</td>
 				<td>
 					<a href=""><i class="fa fa-pencil"></i> </a>

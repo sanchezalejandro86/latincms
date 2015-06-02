@@ -1,16 +1,7 @@
-{% extends "layout.twig" %}
-
 {% block body %}
-	{%block header%}
-		{% include 'header.twig' %}
-	{% endblock %}
-	<div ng-view style="height: 100%;">
+	{% include 'header.twig' %}
 	{% block content %}
 	{% endblock %}
-	</div>
 	{% include 'footer.twig' %}
 {% endblock %}
 
-{% block additionalStylesheets %}
-	<link href="resources/stylesheets/styles.css" rel="stylesheet" media="screen">
-{% endblock %}

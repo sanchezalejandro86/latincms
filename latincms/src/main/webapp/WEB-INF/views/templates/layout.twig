@@ -7,15 +7,18 @@
 		<meta name="robots" content="INDEX, FOLLOW">
 		<meta charset="UTF-8">
 		
-		<link rel="stylesheet" href="resources/stylesheets/bootstrap.min.css" media="screen">
-		<link rel="stylesheet" href="resources/stylesheets/font-awesome.min.css" media="screen">
-		<link rel="stylesheet" href="resources/stylesheets/angular-ui-tree.min.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="resources/stylesheets/bootstrap.min.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="resources/stylesheets/font-awesome.min.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="resources/stylesheets/angular-ui-tree.min.css" media="screen">
+		<link href="resources/stylesheets/styles.css" rel="stylesheet" media="screen">
 	</head>
 
 	{% block additionalStylesheets %}{% endblock %}
 	
 	<body>
-		{% block body %}{% endblock %}
+		<div ng-view class="wrapper">
+			{% block body %}{% endblock %}
+		</div>
 		
 		<script type="text/javascript" src="resources/scripts/lib/angular.js"></script>
 		<script type="text/javascript" src="resources/scripts/lib/angular-route.min.js"></script>
@@ -24,6 +27,7 @@
 		<script type="text/javascript" src="resources/scripts/lib/angular-ui-tree.min.js"></script>
 		<script type="text/javascript" src="resources/scripts/lib/ui-bootstrap-tpls-0.13.0.min.js"></script>
 		<script type="text/javascript" src="resources/scripts/lib/smart-table.min.js"></script>
+		<script type="text/javascript" src="resources/scripts/lib/ng-breadcrumbs.min.js"></script>
 		<script type="text/javascript" src="resources/scripts/app.js"></script>
 		<script type="text/javascript" src="resources/scripts/controller/HomeController.js"></script>
 		<script type="text/javascript" src="resources/scripts/controller/AdminController.js"></script>

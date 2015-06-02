@@ -1,65 +1,60 @@
-{# <div class="navbar navbar-default">#} {# <ul class="nav
-navbar-nav">#} {# {% if
-request.userDetail.principal.authorities[0].authority == 'ROLE_ADMIN'
-%}#} {# <li><a href="#/admin">Administrar</a></li>#} {# {% else %}#} {#
-<li><a href="#/admin">Administrar2</a></li>#} {# {% endif %}#} {#
-</ul>#} {# <ul class="nav navbar-nav navbar-right">#} {# <li
-class="dropdown" dropdown>#} {# <a href="#" class="dropdown-toggle"
-data-toggle="dropdown" role="button" aria-expanded="false"
-dropdown-toggle>Alejandro#} {# <span class="caret"></span></a>#} {# <ul
-class="dropdown-menu" role="menu">#} {# <li><a href="#">Mi
-Perfil</a></li>#} {# <li><a href="logout">Cerrar Sesion</a></li>#} {#
-</ul>#} {# </li>#} {# </ul>#} {# </div>#}
 <header>
 	<div class="widewrapper masthead">
 		<div class="container">
-			<a href="/" id="logo"> <img src="resources/images/latin-logo.png"
-				alt="Tales Blog">
-			</a>
-
-			<div id="mobile-nav-toggle" class="pull-right">
-				<a href="#" data-toggle="collapse"
-					data-target=".tales-nav .navbar-collapse"> <i class="fa fa-bars"></i>
-				</a>
-			</div>
-
-			<nav class="pull-right tales-nav">
-				<div class="collapse navbar-collapse">
-					<ul class="nav nav-pills navbar-nav">
-
-						<li class="dropdown active"><a class="dropdown-toggle"
-							data-toggle="dropdown" href="#"> Blog <b class="caret"></b>
+			<nav class="navbar navbar-inverse" role="navigation">
+				<div class="container" ng-init="isCollapsed = true">
+					<div class="navbar-header">
+			        	<button class="navbar-toggle" type="button" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+			            	<span class="sr-only">Toggle navigation</span>
+			            	<span class="icon-bar"></span>
+			            	<span class="icon-bar"></span>
+			            	<span class="icon-bar"></span>
+			          	</button>
+			          	<a href="#/home" id="logo"> 
+							<img src="resources/images/latin-logo.png" alt="Tales Blog">
 						</a>
-							<ul class="dropdown-menu">
-								<li><a href="index.html">Blog</a></li>
-								<li><a href="blog-detail.html">Blog Detail</a></li>
-							</ul></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="credits.html">Credits</a></li>
-					</ul>
-					<ul class="nav nav-pills navbar-nav">
-						<li class="dropdown active" dropdown><a class="dropdown-toggle"
-							data-toggle="dropdown" href="#" dropdown-toggle> Alejandro <b class="caret"></b>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Mi Perfil</a></li>
-								<li><a href="logout">Cerrar Sesi&oacute;n</a></li>
-								{% if request.userDetail.principal.authorities[0].authority == 'ROLE_ADMIN'%}
-									<li class="divider"></li>
-									<li><a href="#/admin">Administrar</a></li>
-								{% endif %}
-							</ul></li>
-					</ul>
+			        </div>
+			         <div collapse="isCollapsed" class="navbar-collapse bs-js-navbar-collapse pull-right">
+						<ul class="nav navbar-nav">
+							<li class="dropdown" dropdown>
+								<a class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle> Blog <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="index.html">Blog</a></li>
+									<li><a href="blog-detail.html">Blog Detail</a></li>
+								</ul></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="credits.html">Credits</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown" dropdown>
+								<a class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle> 
+									{{request.userPrincipal.name }} <b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Mi Perfil</a></li>
+									<li><a href="logout">Cerrar Sesi&oacute;n</a></li> 
+									{% if request.userPrincipal.authorities.get(0).authority == 'ROLE_ADMIN' %}
+										<li class="divider"></li>
+										<li><a href="#/admin">Administrar</a></li> 
+									{% endif %}
+								</ul>
+							</li>
+						</ul>
+					</div><!-- /.nav-collapse -->
 				</div>
 			</nav>
-
 		</div>
 	</div>
 
 	<div class="widewrapper subheader">
 		<div class="container">
 			<div class="tales-breadcrumb">
-				<a href="#">Blog</a>
+				<ol class="ab-nav breadcrumb">
+					<li ng-repeat="breadcrumb in breadcrumbs.get() track by breadcrumb.path" ng-class="{ active: $last }">
+				    	<a ng-if="!$last" ng-href="#{%verbatim%}{{ breadcrumb.path }}{%endverbatim%}" ng-bind="breadcrumb.label" class="margin-right-xs"></a>
+				    	<span ng-if="$last" ng-bind="breadcrumb.label"></span>
+					</li>
+				</ol>
 			</div>
 
 			<div class="tales-searchbox">

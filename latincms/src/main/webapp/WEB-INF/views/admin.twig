@@ -1,20 +1,27 @@
-	<!-- MENU -->
-<div class="sidebar-menu">
-	<div class="sidebar-menu-container">
-		<ul>
-			<li><a href="#/home" class="selected">Inicio</a></li>
-			<li><a href="#/admin/abm/post">Posts</a></li>
-			<li><a href="#/admin/abm/page">P&aacute;ginas</a></li>
-			<li><a href="#/admin/abm/comment">Comentarios</a></li>
-			<li><a href="#/admin/abm/user">Usuarios</a></li>
-			<li><a href="#/admin/abm/menu">Apariencia</a></li>
-			<li><a href="#">Ajustes</a></li>
-		</ul>s
-	</div>
-</div>
-
+<!-- MENU -->
+<div class="wrapper-admin">
+	<aside class="aside sidebar-menu">
+		<div class="aside-inner">
+			<ul>
+				<li><a href="#/home" class="selected">Inicio</a></li>
+				<li><a href="#/admin/post">Posts</a></li>
+				<li><a href="#/admin/page">P&aacute;ginas</a></li>
+				<li><a href="#/admin/comment">Comentarios</a></li>
+				<li><a href="#/admin/user">Usuarios</a></li>
+				<li><a href="#/admin/menu">Apariencia</a></li>
+				<li><a href="#">Ajustes</a></li>
+			</ul>s
+		</div>
+	</aside>
+	
 	<!-- main page -->
-	<div class="main-page lateral-slide-menu-main-page">
-{# 		<a href="" class="toggle-menu" lateral-slide-menu-toggle></a>#}
-		{% block main_admin %}{% endblock %}
-	</div>
+	<section>
+		<div class="content-wrapper">
+			{% block main_admin %}{% endblock %}
+		</div>
+	</section>
+	
+	<footer>
+		<span>© 2015 - LatinCMS</span>
+	</footer>
+</div>
