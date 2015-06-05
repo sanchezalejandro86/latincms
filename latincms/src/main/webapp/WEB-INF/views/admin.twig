@@ -10,17 +10,22 @@
 				<li><a href="#/admin/user">Usuarios</a></li>
 				<li><a href="#/admin/menu">Apariencia</a></li>
 				<li><a href="#">Ajustes</a></li>
-			</ul>s
+			</ul>
+			s
 		</div>
 	</aside>
-	
+
 	<!-- main page -->
 	<section>
-		<div class="content-wrapper">
-			{% block main_admin %}{% endblock %}
+		<div class="row wrapper border-bottom white-bg page-heading">
+			<div class="col-lg-10">
+				<h2 class="title">{%verbatim%}{{ title }}{%endverbatim%}</h2>
+			</div>
+			<div class="col-lg-2"></div>
 		</div>
+		<div class="content-wrapper">{% block main_admin %}{% endblock %}</div>
 	</section>
-	
+
 	<footer>
 		<span>© 2015 - LatinCMS</span>
 	</footer>

@@ -305,6 +305,7 @@ html, body{
 .blog-main {
   padding-top: 36px;
   padding-bottom: 20px;
+  min-height: 500px;
 }
 
 #authenty_preview > section {
@@ -486,6 +487,9 @@ html, body{
 
 .breadcrumb{
 	background-color: transparent !important;
+  background-color: #ffffff;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .sidebar-box h4 {
@@ -670,7 +674,7 @@ html, body{
 
 .wrapper-admin>footer, .wrapper-admin>section {
   margin-left: 220px;
-/*   background-color: #f5f7fa; */
+/*   background-color: #f3f3f4; */
 }
 
 .wrapper-admin>footer{
@@ -692,3 +696,79 @@ html, body{
 .aside-inner ul li {
   padding: 0px 15px;
 }
+
+h2.title{
+	font-size: 24px;
+	font-weight: 100;
+}
+
+.authenty.signup-window .normal-signup .signup:hover {
+  background-color: #5B910C;
+}
+
+.authenty.signup-window .normal-signup .signup {
+  padding: 8px 15px;
+  background-color: #78B310;
+  color: #fff;
+  -webkit-transition: background-color 300ms linear;
+  -moz-transition: background-color 300ms linear;
+  -o-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+
+.authenty.signup-window input[type="text"], .authenty.signup-window input[type="password"], .authenty.signup-window input[type="email"] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #505050;
+  box-shadow: none;
+  padding: 10px 0 10px 10px;
+  border-radius: 0;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.normal-signup{
+	margin-top: 20px;
+}
+
+#account{
+	padding: 70px;
+}
+
+.divide80 {
+  width: 100%;
+  height: 80px;
+}
+
+.center-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.center-heading h2 {
+  margin-bottom: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333;
+  font-size: 30px;
+}
+
+.center-line {
+  display: inline-block;
+  width: 70px;
+  height: 1px;
+  border-top: 1px solid #bbb;
+  /* border-bottom: 1px solid $skincolor; */
+  margin: auto;
+}
+
+.center-heading p {
+  margin-top: 10px;
+}
+
+.center-heading p {
+  font-size: 18px;
+}
+

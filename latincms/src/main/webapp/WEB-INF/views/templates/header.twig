@@ -16,14 +16,9 @@
 			        </div>
 			         <div collapse="isCollapsed" class="navbar-collapse bs-js-navbar-collapse pull-right">
 						<ul class="nav navbar-nav">
-							<li class="dropdown" dropdown>
-								<a class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle> Blog <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="index.html">Blog</a></li>
-									<li><a href="blog-detail.html">Blog Detail</a></li>
-								</ul></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="credits.html">Credits</a></li>
+							<li><a href="#/home">Blog</a></li>
+							<li><a href="#/about">About</a></li>
+							<li><a href="#/faq">FAQ</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown" dropdown>
@@ -31,7 +26,7 @@
 									{{request.userPrincipal.name }} <b class="caret"></b>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Mi Perfil</a></li>
+									<li><a href="#/profile">Mi Perfil</a></li>
 									<li><a href="logout">Cerrar Sesi&oacute;n</a></li> 
 									{% if request.userPrincipal.authorities.get(0).authority == 'ROLE_ADMIN' %}
 										<li class="divider"></li>

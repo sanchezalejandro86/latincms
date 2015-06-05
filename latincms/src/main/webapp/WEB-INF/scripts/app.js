@@ -6,11 +6,25 @@ latinCMS.config(['$routeProvider', function ($routeProvider) {
         controller: HomeController,
         label: 'Home'
     });
+    $routeProvider.when('/profile', {
+    	templateUrl: 'profile/layout',
+    	controller: ProfileController,
+    	label: 'Perfil'
+    });
+    $routeProvider.when('/about', {
+    	templateUrl: 'about/layout',
+    	controller: AboutController,
+    	label: 'About'
+    });
+    $routeProvider.when('/faq', {
+    	templateUrl: 'faq/layout',
+    	controller: FAQController,
+    	label: 'FAQ'
+    });
     $routeProvider.when('/post/:postId', {
     	templateUrl: 'post/layout',
     	controller: PostController,
     	label: 'Post'
-    	
     });
     $routeProvider.when('/admin', {
         templateUrl: 'admin/layout',

@@ -7,6 +7,8 @@ import javax.transaction.Transactional;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.latinnet.latincms.model.dao.PerfilDAO;
 import com.latinnet.latincms.model.dao.UsuarioDAO;
 import com.latinnet.latincms.model.dto.UsuarioDTO;
-import com.latinnet.latincms.model.entity.Post;
 import com.latinnet.latincms.model.entity.Usuario;
 
 
@@ -54,6 +55,14 @@ public class UserController{
     
     @Transactional
     @ResponseBody
+    @RequestMapping("/getCurrent")
+    public UsuarioDTO getCurrentUser(){
+	User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	return mapper.map(usuarioDAO.findByUserName(user.getUsername()), UsuarioDTO.class);
+    }
+    
+    @Transactional
+    @ResponseBody
     @RequestMapping("/add")
     public UsuarioDTO addUser(@RequestBody Usuario user){
 
@@ -64,7 +73,6 @@ public class UserController{
     	return mapper.map(user, UsuarioDTO.class);
     }
     
-    
     @Transactional
     @ResponseBody
     @RequestMapping("/delete")
@@ -72,6 +80,14 @@ public class UserController{
     	user = usuarioDAO.findById(user.getId());
     	usuarioDAO.delete(user);
     	return ;
+    }
+    
+    @Transactional
+    @ResponseBody
+    @RequestMapping("/update")
+    public UsuarioDTO updateUser(@RequestBody Usuario user){
+	user = usuarioDAO.save(user);
+	return mapper.map(user, UsuarioDTO.class);
     }
     
 }

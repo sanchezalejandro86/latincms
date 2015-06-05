@@ -8,7 +8,11 @@ function UserService($http){
 	}
 	
 	service.get = function (postId){
-		return $http.get("page/get/"+userId);
+		return $http.get("user/get/"+userId);
+	}
+	
+	service.getCurrent = function (){
+		return $http.get("user/getCurrent");
 	}
 	
 	service.add = function(user){
@@ -17,6 +21,10 @@ function UserService($http){
 	
 	service.delete = function(userId){
 		return $http.post("user/delete", {id: userId});
+	}
+	
+	service.update = function(user){
+		return $http.post("user/update", user);
 	}
 	
 	return service;

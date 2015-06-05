@@ -13,7 +13,7 @@
 
 	<body>
 	
-			<section id="signin_main" class="authenty signin-main" style="height: 100%;">
+			<section id="signin_main" class="authenty signin-main signup-window" style="height: 100%;">
 				<div class="section-content">
 				  <div class="wrap">
 					  <div class="container">	  
@@ -27,24 +27,30 @@
 										<div class="form-header">
 										  <i class="fa fa-user"></i>
 									  </div>
-									  <div class="form-main">
-									  	<form method="post" action="login">		
-											<div class="form-group">
-								  				<input type="text" id="un_1" class="form-control" placeholder="Username" required="required" name="username">
-												<input type="password" id="pw_1" class="form-control" placeholder="Password" required="required" name="password">
-										  	</div>
-									    	<button id="signIn_1" type="submit" class="btn btn-block signin">Ingresar</button>
-									 	</form>
-									  </div>
+									 <div class="col-xs-12 col-sm-6 col-md-12">
+									<div class="normal-signup">
+										<form action="/latincms/signup/save">
+										  <div class="form-group">
+										    <input type="text" class="form-control" placeholder="Usuario" required="required" name="username">
+										    <input type="text" class="form-control" placeholder="Nombre" required="required"  name="nombre">
+										    <input type="text" class="form-control" placeholder="Apellido" required="required"  name="apellido">
+										  </div>
+											<div class="row">
+												<!-- <div class="col-md-6">
+													<a href="#password_recovery" id="forgot_from_3">need help?</a>
+												</div> -->
+												<div class="col-md-5 col-md-offset-7">
+													<button type="submit" class="btn btn-block signup">Registrarse</button>
+												</div>
+											</div>
+										</form>
+									</div>	
+								</div>
 										<div class="form-footer">
 											<div class="row">
 												<div class="col-xs-7">
 													<i class="fa fa-unlock-alt"></i>
-													<a href="#password_recovery" id="forgot_from_1">Olvid&oacute; su contrase&ntilde;a?</a>
-												</div>
-												<div class="col-xs-5">
-													<i class="fa fa-check"></i>
-													<a href="/latincms/signup" id="signup_from_1">Registrarse</a>
+													<a href="/latincms/login" id="forgot_from_1">Ya tengo usuario</a>
 												</div>
 											</div>
 										</div>		

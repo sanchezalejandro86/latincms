@@ -1,8 +1,7 @@
 latinCMS.controller("HomeController", ["$scope", "breadcrumbs", "PostService", HomeController]);
 
 function HomeController($scope, breadcrumbs, PostService){
-	
-	$scope.$parent.breadcrumbs = breadcrumbs;
+	$scope.breadcrumbs = breadcrumbs;
 	
 	$scope.fetchAllPosts = function(){
 		PostService.getAll().then(function(result){

@@ -1,0 +1,58 @@
+{% extends "../templates/scaffolding.twig" %}
+
+{% block content %}
+<div id="account" class="tab-pane active">
+	<form class="form-horizontal ng-submit=guardar()">
+		<div class="form-group">
+			<label for="inputEmail3" class="col-md-2 control-label">Nombre completo</label>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-control-material">
+							<input type="text" class="form-control"
+								id="exampleInputFirstName" placeholder="Nombre" ng-model="currentUser.nombre"><span
+								class="ma-form-highlight" ></span><span class="ma-form-bar"></span>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-control-material">
+							<input type="text" class="form-control"
+								id="exampleInputLastName" placeholder="Apellido" ng-model="currentUser.apellido"><span
+								class="ma-form-highlight" ></span><span class="ma-form-bar"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-md-2 control-label">Email</label>
+			<div class="col-md-6">
+				<div class="form-control-material">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+						<input type="email" class="form-control" id="inputEmail3"
+							placeholder="Email" ng-model="currentUser.email"><span class="ma-form-highlight"></span><span
+							class="ma-form-bar" ></span> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-md-2 control-label">Cambiar Contrase&ntilde;a</label>
+			<div class="col-md-6">
+				<div class="form-control-material">
+					<input type="password" class="form-control" id="inputPassword3"
+						placeholder="Password" ng-model="currentUser.password"><span class="ma-form-highlight"></span><span
+						class="ma-form-bar"></span> 
+				</div>
+			</div>
+		</div>
+		<div class="form-group margin-none">
+			<div class="col-md-offset-2 col-md-10">
+				<button type="submit" class="btn btn-primary paper-shadow relative"
+					data-z="0.5" data-hover-z="1" data-animated="">Guardar</button>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}
